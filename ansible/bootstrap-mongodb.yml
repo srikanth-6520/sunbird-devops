@@ -11,7 +11,7 @@
           copy:
            content: |-
              use nodebb
-             db.updateUser( { user: "nodebb", pwd: "{{ nodebb_admin_password }}", roles: [ { role: "readWrite", db: "nodebb" }, { role: "clusterMonitor", db: "admin" } ] } )
+             db.updateUser( { user: "nodebb", { $set: { pwd: "{{ nodebb_admin_password }}", roles: [ { role: "readWrite", db: "nodebb" }, { role: "clusterMonitor", db: "admin" } ] } } } )
            dest: /tmp/nodebb.js
         - name: Init nodebb db
           shell: |-
