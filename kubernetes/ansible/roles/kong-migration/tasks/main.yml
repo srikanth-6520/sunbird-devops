@@ -29,7 +29,6 @@
       KONG_PROXY_ERROR_LOG: "/dev/stderr"
       KONG_ADMIN_ERROR_LOG: "/dev/stderr"
   register: kong_migration_output
-  when: docker_container_output.ansible_facts.docker_container.Output == "Did not find any relations.\n"  and release_name =="apimanager"
 
 - name: fail when migration failed
   fail:
