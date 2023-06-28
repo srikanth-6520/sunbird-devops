@@ -57,7 +57,6 @@ spec:
 {{- end }}
   ports:
   - port: 80
-    nodePort: 31480
     targetPort: 80
     name: http
   selector:
