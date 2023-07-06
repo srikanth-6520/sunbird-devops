@@ -1,30 +1,30 @@
----
-- name: Create Master category
-  uri:
-    url: http://localhost:8080/learning-service/framework/v3/category/master/create
-    method: POST
-    body_format: json
-    body: |-
-      {
-          "request": {
-            "category": {{ item }}
-          }
-      }
-  with_items: "{{ master_category }}"
-  delegate_to: "{{ learningservice_ip }}"
+#---
+#- name: Create Master category
+# uri:
+#    url: http://localhost:8080/learning-service/framework/v3/category/master/create
+#    method: POST
+#   body_format: json
+#    body: |-
+#     {
+#          "request": {
+#           "category": {{ item }}
+#          }
+#     }
+#  with_items: "{{ master_category }}"
+# delegate_to: "{{ learningservice_ip }}"
 
-- name: Create Object category
-  uri:
-    url: http://{{ private_ingressgateway_ip }}/taxonomy/object/category/v4/create
-    method: POST
-    body_format: json
-    body: |-
-      {
-          "request": {
-            "objectCategory": {{ item }}
-          }
-      }
-  with_items: "{{ object_category }}"
+#- name: Create Object category
+#  uri:
+#   url: http://{{ private_ingressgateway_ip }}/taxonomy/object/category/v4/create
+#    method: POST
+#    body_format: json
+#   body: |-
+#      {
+#         "request": {
+#            "objectCategory": {{ item }}
+#          }
+#     }
+#  with_items: "{{ object_category }}"
 
 - name: Create Object category definition
   uri:
