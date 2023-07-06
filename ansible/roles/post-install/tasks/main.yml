@@ -35,13 +35,13 @@
 #            "organisationType":"board"
 #          }
 #        }
-    register: custodian_org_output
-  - debug:
-      var: custodian_org_output
-  - set_fact:
-      sunbird_custodian_org_id: "{{ custodian_org_output.json.result.organisationId }}"
-  - debug:
-      var: sunbird_custodian_org_id
+#    register: custodian_org_output
+#  - debug:
+#      var: custodian_org_output
+#  - set_fact:
+#      sunbird_custodian_org_id: "{{ custodian_org_output.json.result.organisationId }}"
+#  - debug:
+#      var: sunbird_custodian_org_id
 
 # Else login won't work
 #- name: Creating NTP org for login
